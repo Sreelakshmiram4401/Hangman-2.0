@@ -42,14 +42,14 @@ guessed = []
 CREAM = (255,253,208)
 BLACK = (0,0,0)
 RED = (255,0,0)
-bg = pygame.image.load("https://github.com/Sreelakshmiram4401/Hangman-2.0/blob/main/bg.png") 
+bg = pygame.image.load("bg.png") 
 
 
 
 def draw():
     
     
-    bg = pygame.image.load("https://github.com/Sreelakshmiram4401/Hangman-2.0/blob/main/bg.png") 
+    
     win.blit(bg, (0, 0))
     text = TITLE_FONT.render("WELCOME TO HANGMAN 2.0", 1,RED)
     win.blit(text, (WIDTH/2 - text.get_width()/2, 20))
@@ -79,7 +79,7 @@ def draw():
 def display_message(message):
     
     pygame.time.delay(1000)
-    bg = pygame.image.load("https://github.com/Sreelakshmiram4401/Hangman-2.0/blob/main/bg.png") 
+    
     win.blit(bg, (0, 0))
     text = WORD_FONT.render(message, 1, BLACK)
     win.blit(text, (WIDTH/2 - text.get_width()/2, HEIGHT/2 - text.get_height()/2))
@@ -104,7 +104,7 @@ def main():
                 for letter in letters:
                     x, y, ltr, visible = letter
                     if visible:
-                        dis = math.sqrt((x - m_x)**2 + (y - m_y)**2)
+                        dis = math.sqrt((x - m_x)*2 + (y - m_y)*2)
                         if dis < RADIUS:
                             letter[3] = False
                             guessed.append(ltr)
