@@ -104,7 +104,7 @@ def main():
                 for letter in letters:
                     x, y, ltr, visible = letter
                     if visible:
-                        dis = math.sqrt((x - m_x)*2 + (y - m_y)*2)
+                        dis = math.sqrt((x - m_x)**2 + (y - m_y)**2)
                         if dis < RADIUS:
                             letter[3] = False
                             guessed.append(ltr)
